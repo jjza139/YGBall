@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YG Ball</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 YG Ball</h1>
+        <p class="subtitle">ใส่ตัวเลขที่ทายและผลลัพธ์ที่ได้ เพื่อหาคำตอบที่ถูกต้อง</p>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalGuesses">0</div>
+                <div class="stat-label">จำนวนครั้งที่ทาย</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="possibleAnswers">504</div>
+                <div class="stat-label">คำตอบที่เป็นไปได้</div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <label for="numbers">🔢 ตัวเลข 3 หลัก</label>
+                    <input type="text" id="numbers" placeholder="เช่น 123" maxlength="3">
+                </div>
+                <div class="input-wrapper">
+                    <label for="correctNumbers">✅ ถูกตัวเลข</label>
+                    <input type="number" id="correctNumbers" placeholder="0-3" min="0" max="3">
+                </div>
+                <div class="input-wrapper">
+                    <label for="correctPositions">📍 ถูกตำแหน่ง</label>
+                    <input type="number" id="correctPositions" placeholder="0-3" min="0" max="3">
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="btn-add" onclick="addGuess()">➕ เพิ่มข้อมูล</button>
+                <button class="btn-reset" onclick="resetGame()">🔄 เริ่มใหม่</button>
+            </div>
+        </div>
+
+        <div class="suggestion-section" id="suggestionSection" style="display: none;">
+            <h3><span class="icon">💡</span> แนะนำตัวเลขถัดไป</h3>
+            <p id="suggestionText">คลิกตัวเลขเพื่อใช้งาน</p>
+            <div class="suggestion-numbers" id="suggestionNumbers"></div>
+        </div>
+
+        <div class="history-section">
+            <h3><span class="icon">📝</span> ประวัติการทาย</h3>
+            <div id="historyList">
+                <div class="empty-state">
+                    ยังไม่มีข้อมูล กรุณาใส่ข้อมูลการทายของคุณ
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
